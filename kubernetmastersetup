@@ -1,5 +1,6 @@
 
 yum install -y kubelet kubeadm kubectl docker
+systemctl enable docker && systemctl start docker
 systemctl enable kubelet && systemctl start kubelet
 kubeadm init --pod-network-cidr=172.30.0.0/16 -- 15 min 
 mkdir -p $HOME/.kube
